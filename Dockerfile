@@ -6,6 +6,8 @@ ARG JAR_FILE=/target/*.war
 
 COPY ${JAR_FILE} app.jar
 
+EXPOSE 8888
+
 RUN echo "Creation of docker image is in progress..."
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
