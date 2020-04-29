@@ -6,7 +6,7 @@ ARG JAR_FILE=/target/*.war
 
 COPY ${JAR_FILE} app.jar
 
-EXPOSE 8888
+EXPOSE 8080
 
 RUN echo "Creation of docker image is in progress..."
 
