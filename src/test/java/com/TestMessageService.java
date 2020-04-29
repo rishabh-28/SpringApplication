@@ -32,4 +32,36 @@ public class TestMessageService {
 		MessageService ms = new MessageService();
 		Assertions.assertEquals(ms.multiply(), 400);
 	}
+	
+	@Test
+	public void testTry() {
+		MessageService ms = new MessageService();
+		Assertions.assertEquals(ms.sayTry(), "Try");
+	}
+	@Test
+	public void testJenkins() {
+		MessageService ms = new MessageService();
+		Assertions.assertEquals(ms.sayJenkins(), "Jenkins");
+	}
+	@Test
+	public void testAWS() {
+		MessageService ms = new MessageService();
+		Assertions.assertEquals(ms.sayAWS(), "AWS");
+	}
+	@Test
+	public void testError() {
+		MessageService ms = new MessageService();
+		Assertions.assertEquals(ms.sayError(), "Error");
+	}
+	@Test
+	public void testSpring() {
+		MessageService ms = new MessageService();
+		Assertions.assertEquals(ms.saySpring(), "Spring");
+	}
+	@Test
+	public void testMaven() {
+		MessageService ms = new MessageService();
+		Assertions.assertEquals(ms.sayMaven(), "Maven");
+	}
+	
 }
