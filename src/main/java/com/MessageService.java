@@ -24,7 +24,8 @@ public class MessageService {
 	}
 	@GetMapping("/try")
 	public String sayTry() {
-		return "Hello";}
+		return "Try";
+	}
 	@GetMapping("/error")
 	public String sayError() {
 		return "Error";}
@@ -32,7 +33,7 @@ public class MessageService {
 	public String sayMaven() {
 		return "Maven";}
 	@GetMapping("/jenkins")
-	public String sayHello() {
+	public String sayJenkins() {
 		return "Jenkins";}
 	@GetMapping("/AWS")
 	public String sayAWS() {
