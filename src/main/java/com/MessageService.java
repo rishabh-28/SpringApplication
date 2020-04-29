@@ -22,6 +22,24 @@ public class MessageService {
 	public int subtract() {
 		return 40 - 10;
 	}
+	@GetMapping("/try")
+	public String sayTry() {
+		return "Hello";
+	@GetMapping("/error")
+	public String sayError() {
+		return "Error";
+	@GetMapping("/maven")
+	public String sayMaven() {
+		return "Maven";
+	@GetMapping("/jenkins")
+	public String sayHello() {
+		return "Jenkins";
+	@GetMapping("/AWS")
+	public String sayAWS() {
+		return "AWS";
+	@GetMapping("/spring")
+	public String saySpring() {
+		return "Spring";
 	
 	
 }
