@@ -24,22 +24,21 @@ public class MessageService {
 	}
 	@GetMapping("/try")
 	public String sayTry() {
-		return "Hello";
+		return "Hello";}
 	@GetMapping("/error")
 	public String sayError() {
-		return "Error";
+		return "Error";}
 	@GetMapping("/maven")
 	public String sayMaven() {
-		return "Maven";
+		return "Maven";}
 	@GetMapping("/jenkins")
 	public String sayHello() {
-		return "Jenkins";
+		return "Jenkins";}
 	@GetMapping("/AWS")
 	public String sayAWS() {
-		return "AWS";
+		return "AWS";}
 	@GetMapping("/spring")
 	public String saySpring() {
 		return "Spring";
-	
-	
+	}
 }
