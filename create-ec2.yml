@@ -1,0 +1,36 @@
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:
+    instance_name: 'server'
+    key_name: 'oregon'
+    instance_type: 't2.micro' # keep it free
+    image: 'ami-0d6621c01e8c2de2c' # free ami from Amazon us-east-1 region
+    vpc_subnet_id: 'subnet-12180559'
+    group_id: 'sg-05b887bdb1fdb57fe'
+    zone: 'us-west-2a'
+    region: 'us-west-2'
+  tasks:
+    - name: create an aws instance
+      ec2:
+         aws_access_key: "{{ aws_access_key }}"
+         aws_secret_key: "{{ aws_secret_key }}"
+         key_name: "{{ key_name }}"
+         instance_type: "{{ instance_type }}"
+         image: "{{ image }}"
+         wait: true
+         count: 1
+         instance_tags:
+            Name: "{{ instance_name }}"
+            BuildStatus: 'Provisioning'
+         monitoring: no
+         user_data:
+                 #!/bin/sh
+                 sudo yum update -y
+                 sudo yum install docker -y
+         vpc_subnet_id: "{{ vpc_subnet_id }}"
+         group_id: "{{ group_id }}"
+         zone: "{{ zone }}"
+         region: "{{ region }}"
+         assign_public_ip: yes
+      register: ec2_instance
