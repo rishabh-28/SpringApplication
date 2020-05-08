@@ -29,4 +29,6 @@
          region: "{{ region }}"
          assign_public_ip: yes
       register: ec2_instance
-    - debug: var=hostvars[inventory_hostname]['ansible_default_ipv4']['address']
+      tasks:
+         - debug: var=ansible_all_ipv4_addresses
+ 
