@@ -29,6 +29,5 @@
          region: "{{ region }}"
          assign_public_ip: yes
       register: ec2_instance
-      tasks:
-         - debug: var=ansible_all_ipv4_addresses
+      - debug: var=ansible_all_ipv4_addresses
  
