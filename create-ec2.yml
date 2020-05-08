@@ -13,8 +13,6 @@
   tasks:
     - name: create an aws instance
       ec2:
-         aws_access_key: "{{ aws_access_key }}"
-         aws_secret_key: "{{ aws_secret_key }}"
          key_name: "{{ key_name }}"
          instance_type: "{{ instance_type }}"
          image: "{{ image }}"
