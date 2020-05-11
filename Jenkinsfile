@@ -64,7 +64,7 @@ pipeline {
                     print ip_address
                     def dockerCMD = 'sudo yum install -y docker; sudo systemctl start docker; sudo systemctl enable docker; sudo chmod 777 /var/run/docker.sock'
                     sshagent(credentials: ['ssh-key']) {
-                    sh "ssh -tt -o StrictHostKeyChecking=no ec2-user@${ip_address} ${dockerCMD}"
+                    sh "ssh -o StrictHostKeyChecking=no ec2-user@${ip_address} ${dockerCMD}"
                     }
                 }
             }
@@ -75,7 +75,7 @@ pipeline {
                     print ip_address
                     def dockerCMD = 'sudo docker pull rrishabhbansal96/spring:1.0.0'
                     sshagent(credentials: ['ssh-key']) {
-						sh "ssh -tt -o StrictHostKeyChecking=no ec2-user@${ip_address} ${dockerCMD}"
+			sh "ssh -o StrictHostKeyChecking=no ec2-user@${ip_address} ${dockerCMD}"
                     }
                 }
             }
@@ -85,9 +85,9 @@ pipeline {
             steps {
                 script{
                     print ip_address
-                    def dockerCMD = 'sudo docker run -d rrishabhbansal96/spring:1.0.0'
+                    def dockerCMD = 'sudo docker run -d -p 80:8885 rrishabhbansal96/spring:1.0.0'
                     sshagent(credentials: ['ssh-key']) {
-						sh "ssh -tt -o StrictHostKeyChecking=no ec2-user@${ip_address} ${dockerCMD}"
+			sh "ssh -o StrictHostKeyChecking=no ec2-user@${ip_address} ${dockerCMD}"
                     }
                 }
             }
