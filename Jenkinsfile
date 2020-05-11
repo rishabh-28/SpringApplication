@@ -85,7 +85,7 @@ pipeline {
             steps {
                 script{
                     print ip_address
-                    def dockerCMD = 'sudo docker run -p  -itd rrishabhbansal96/spring:1.0.0'
+                    def dockerCMD = 'sudo docker run -d rrishabhbansal96/spring:1.0.0'
                     sshagent(credentials: ['ssh-key']) {
 						sh "ssh -tt -o StrictHostKeyChecking=no ec2-user@${ip_address} ${dockerCMD}"
                     }
