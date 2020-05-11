@@ -99,7 +99,7 @@ pipeline {
         always {
             echo 'One way or another, I have finished'
             deleteDir() /* clean up our workspace */
-			mail to: 'rrishabhbansal96@gmail.com', from: 'mywebsite2810@gmail.com', subject: "Complete Pipeline: ${currentBuild.fullDisplayName}", body: "Something is wrong with ${env.BUILD_URL}"
+			//mail to: 'rrishabhbansal96@gmail.com', from: 'mywebsite2810@gmail.com', subject: "Complete Pipeline: ${currentBuild.fullDisplayName}", body: "Something is wrong with ${env.BUILD_URL}"
         }
 		failure {
 		    echo 'Failure!'
